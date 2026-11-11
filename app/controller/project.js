@@ -9,8 +9,13 @@ module.exports = app => {
 
     async getList (ctx) {
       const { project: projectService } = app.service;
+      app.logger.info('123');
 
       const res = await projectService.getList();
+
+      const a = res.a.v.a;
+
+      app.logger.info(123);
 
       this.success(ctx, res);
     }

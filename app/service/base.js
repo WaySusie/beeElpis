@@ -1,3 +1,4 @@
+const superagent = require('superagent');
 module.exports = app =>
   class BaseService {
     /**
@@ -8,5 +9,6 @@ module.exports = app =>
     constructor () {
       this.app = app;
       this.config = app.config;
+      this.curl = superagent;
     }
   };

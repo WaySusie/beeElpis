@@ -1,10 +1,10 @@
 {
-    "name": "elpis",
+    "name": "beeElpis",
     "version": "1.0.0",
     "description": "A simple CLI for managing your ELPIS projects",
     "main": "index.js",
     "bin": {
-        "elpis": "index.js"
+        "beeElpis": "index.js"
     },
     "author": {
         "name": "Janice",

@@ -36,7 +36,7 @@ module.exports = app => {
     );
 
     // 把‘-’统一改为驼峰式， custom-module/middleware.js => customModule.customMiddleware
-    fileName = fileName.replace(/[-_ ]+(\w)/g, (_, c) => (c ? c.toUpperCase() : ''));
+    fileName = fileName.replace(/[-_ ][a-z]/gi, s => s.substring(1).toUpperCase());
 
     // 挂在middlewares 到内存app 对象中
     let tempMiddleware = middlewares;

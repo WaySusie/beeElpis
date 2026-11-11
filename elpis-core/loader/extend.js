@@ -21,8 +21,6 @@ module.exports = app => {
   const extendPath = path.resolve(app.businessPath, `.${sep}extend`);
   // 提取所有的文件
   const fileList = glob.sync(path.resolve(extendPath, `.${sep}**${sep}**.js`));
-  // 遍历所有文件目录，把内容加载到app.extend下
-  const extend = {};
 
   fileList.forEach(file => {
     // 提取文件名称
@@ -40,12 +38,11 @@ module.exports = app => {
     // 过滤 app 已经存在的 key
     for (let key in app) {
       if (key === fileName) {
-        console.log(`[extend load error] ${fileName} has been defined`);
         return;
       }
     }
 
     // 挂在 extend 到 app 上
-    extend[fileName] = require(path.resolve(file))(app);
+    app[fileName] = require(path.resolve(file))(app);
   });
 };
