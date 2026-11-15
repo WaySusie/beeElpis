@@ -1,3 +1,5 @@
+const md5 = require('md5');
+
 /**
  * API 签名的合法校验
  * @param {*} app
@@ -12,12 +14,11 @@ module.exports = app => {
     const { path, method } = ctx;
     const { headers } = ctx.request;
 
-    const { s_sign, sSign, s_t: st } = headers;
+    const { s_sign: sSign, s_t: st } = headers;
 
-    // TODO: 签名key需要生成
-    const signKey = '123456';
+    const signKey = 'klx05hb3n1c9ujp8uhxbs2ikkiowp212';
 
-    const signature = md5(`${signKey}_${st}}`);
+    const signature = md5(`${signKey}_${st}`);
 
     app.logger.info(`[${method}] ${path}] signature: ${signature}`);
 

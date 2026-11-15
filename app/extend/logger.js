@@ -2,7 +2,12 @@ const log4js = require('log4js');
 
 /**
  * 日志工具
- * 外部调用  app.logger.log app.logger.error app.logger.warn app.logger.info app.logger.debug
+ * 外部调用
+ * app.logger.log
+ * app.logger.error
+ * app.logger.warn
+ * app.logger.info
+ * app.logger.debug
  */
 module.exports = app => {
   let logger;
@@ -22,10 +27,6 @@ module.exports = app => {
           type: 'dateFile',
           filename: './logs/appllication.log',
           pattern: 'yyyy-MM-dd.log',
-          //   alwaysIncludePattern: true,
-          //   encoding: 'utf-8',
-          //   maxLogSize: 10485760,
-          //   backups: 10,
         },
       },
       categories: {
