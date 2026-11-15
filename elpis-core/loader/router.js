@@ -28,7 +28,8 @@ module.exports = app => {
   // 路由兜底 （健壮性）
   router.get('*', async (ctx, next) => {
     ctx.status = 302;
-    ctx.redirect(`${app?.options?.homePage ?? '/'} `);
+    // TODO: 待完善，有点bug，页面刷新后，会一直重定向
+    ctx.redirect(`${app?.options?.homePage ?? '/'}`);
   });
 
   // 路由注册到 app 上

@@ -42,17 +42,17 @@ module.exports = app => {
 
     // 挂在controllers 到内存app 对象中
     let tempController = controllers;
-    const fileNameArr = fileName.split(sep);
+    const fileNames = fileName.split(sep);
 
-    for (let i = 0; i < fileNameArr.length; i++) {
-      if (i === fileNameArr.length - 1) {
+    for (let i = 0; i < fileNames.length; i++) {
+      if (i === fileNames.length - 1) {
         const ControllerModule = require(path.resolve(file))(app);
-        tempController[fileNameArr[i]] = new ControllerModule();
+        tempController[fileNames[i]] = new ControllerModule();
       } else {
-        if (!tempController[fileNameArr[i]]) {
-          tempController[fileNameArr[i]] = {};
+        if (!tempController[fileNames[i]]) {
+          tempController[fileNames[i]] = {};
         }
-        tempController = tempController[fileNameArr[i]];
+        tempController = tempController[fileNames[i]];
       }
     }
   });

@@ -8,6 +8,9 @@ module.exports = app => {
      */
 
     async getList (ctx) {
+      const { proj_key: projKey } = ctx.request.query;
+      console.log('%c [ proj_key ]-12', 'font-size:13px; background:pink; color:#bf2c9f;', projKey);
+
       const { project: projectService } = app.service;
 
       const res = await projectService.getList();

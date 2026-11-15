@@ -1,7 +1,7 @@
 const Koa = require('koa');
 const path = require('path');
 
-const { sep } = path; // 兼容不同系统的 /
+const { sep } = path; // 兼容不同操作系统的/
 
 const env = require('./env');
 
@@ -41,27 +41,27 @@ module.exports = {
 
     // 加载middleware
     middlewareLoader(app);
-    console.log(`-- [start] middleware loaded --`);
+    console.log(`-- [start] middlewares loaded --`);
 
     // 加载router-schema
     routerSchemaLoader(app);
     // console.log(app.routerSchema);
-    console.log(`-- [start] routerSchema loaded --`);
+    // console.log(`-- [start] routerSchema loaded --`);
 
     // 加载controller
     controllerLoader(app);
     // console.log(app.controller);
-    console.log(`-- [start] controller loaded --`);
+    // console.log(`-- [start] controller loaded --`);
 
     // 加载service
     serviceLoader(app);
     // console.log(app.service);
-    console.log(`-- [start] service loaded --`);
+    // console.log(`-- [start] service loaded --`);
 
     // 加载config
     configLoader(app);
     // console.log(app.config);
-    console.log(`-- [start] config loaded --`);
+    // console.log(`-- [start] config loaded --`);
 
     // 加载extend
     extendLoader(app);
@@ -83,7 +83,7 @@ module.exports = {
 
     // 启动服务
     try {
-      const port = process.env.PORT || 8080;
+      const port = process.env.PORT || 2026;
       const host = process.env.IP || '127.0.0.1';
       app.listen(port, host, () => {
         console.log(`Server is running at http://${host}:${port}`);
