@@ -1,8 +1,7 @@
 const path = require('path');
-const webpack = require('webpack');
+// const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const webpackBaseConfig = require('./webpack.base.js'); // 基类配置
-const { devtools } = require('vue');
 
 // dev-server 配置
 const DEV_SERVER_CONFIG = {
