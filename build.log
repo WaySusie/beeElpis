@@ -1,0 +1,4 @@
+
+> beeElpis@1.0.0 build:dev
+> node --max_old_space_size=4096 ./app/webpack/dev.js
+
