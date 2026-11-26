@@ -8,7 +8,7 @@
     <title>{{ name }}</title>
     <link rel="stylesheet" href="/static/normalize.css">
     <link href="/static/logo.jpg" rel="icon" type="image/x-icon">
-<script defer src="http://127.0.0.1:9002/public/dist/dev/js/runtime~entry.page1.fcb34c41.bundle.js"></script><script defer src="http://127.0.0.1:9002/public/dist/dev/js/common.6a581819.bundle.js"></script><script defer src="http://127.0.0.1:9002/public/dist/dev/js/entry.page1.df44f754.bundle.js"></script></head>
+<script defer src="http://127.0.0.1:9002/public/dist/dev/js/runtime~entry.page1.443e3f75.bundle.js"></script><script defer src="http://127.0.0.1:9002/public/dist/dev/js/common.4312f279.bundle.js"></script><script defer src="http://127.0.0.1:9002/public/dist/dev/js/vendors-node_modules_axios_index_js-node_modules_md5_md5_js.f8016e6e.bundle.js"></script><script defer src="http://127.0.0.1:9002/public/dist/dev/js/entry.page1.d8fc8580.bundle.js"></script></head>
 
 <body>
     <div id="root"></div>

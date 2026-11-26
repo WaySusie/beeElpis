@@ -1,14 +1,14 @@
 <template>
   <h1>Page 1</h1>
 
-  <input type="text" v-model="content" />
+  <el-input v-model="content" style="width: 150px"></el-input>
 
   <div>{{ content }}</div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import utils from '$common/utils';
+// import utils from '$common/utils';
 
 const content = ref('');
 

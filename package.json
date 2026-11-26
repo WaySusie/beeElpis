@@ -97,6 +97,12 @@
     "ghooks": {
       "commit-msg": "validate-commit-msg",
       "pre-commit": "npm run lint"
+    },
+    "validate-commit-msg": {
+      "types": [
+        "WIP", "feat", "improvement", "fix", "refactor", "docs",
+        "test", "config", "style", "perf", "ci", "revert", "chore"
+      ]
     }
   }
 

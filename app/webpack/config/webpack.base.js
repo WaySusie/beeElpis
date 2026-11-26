@@ -104,6 +104,8 @@ module.exports = {
     // 把第三方库暴露到 Window context 上， 例如 jQuery, Lodash, React, Vue 等等
     new webpack.ProvidePlugin({
       Vue: 'vue',
+      axios: 'axios',
+      _: 'lodash',
     }),
 
     // 定义全局常量
