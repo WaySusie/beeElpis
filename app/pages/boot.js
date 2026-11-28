@@ -4,6 +4,7 @@ import { createApp } from 'vue';
 import ElementUI from 'element-plus';
 // 引入全局样式
 import 'element-plus/theme-chalk/index.css';
+import 'element-plus/theme-chalk/dark/css-vars.css';
 
 import './asserts/custom.css';
 
@@ -19,7 +20,7 @@ import { createRouter, createWebHashHistory } from 'vue-router';
  * @params routes 路由列表
  * @params libs 页面依赖的第三方包
  */
-export default (pageComponent, { routes, libs }) => {
+export default (pageComponent, { routes, libs } = {}) => {
   const app = createApp(pageComponent);
 
   // 应用
