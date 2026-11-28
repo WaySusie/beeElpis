@@ -17,6 +17,7 @@
     },
     "scripts": {
         "lint": "eslint --quiet --ext js,vue .",
+        "test": "_ENV='local' mocha 'test'/**/*.js",
         "dev": "_ENV='local' nodemon ./index.js ",
         "beta": "_ENV='beta' nodemon ./index.js ",
         "prod": "_ENV='production' nodemon ./index.js ",

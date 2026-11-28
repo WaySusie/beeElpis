@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 <body>
     <div id="root"></div>
 
-    <input id="env" type="input" value="{{env}}" />
+    <input id="env" type="input" value="{{env}}" style="display: none;" />
     <input id="options" type="input" value="{{options}}" style="display: none;" />
 </body>
 <script type="text/javascript">

@@ -2,20 +2,37 @@ module.exports = app => {
   const BaseController = require('./base')(app);
   return class projectController extends BaseController {
     /**
-     * 获取项目列表
-     * @param {object} ctx 上下文
-     *
+     * 获取所有模型与项目的结构化数据
+     * @param {*} ctx
      */
-
-    async getList (ctx) {
-      const { proj_key: projKey } = ctx.request.query;
-      console.log('%c [ proj_key ]-12', 'font-size:13px; background:pink; color:#bf2c9f;', projKey);
-
+    async getModelList (ctx) {
       const { project: projectService } = app.service;
 
-      const res = await projectService.getList();
+      const modelList = await projectService.getModelList();
 
-      this.success(ctx, res);
+      // 构造返回结构，只返回关键数据
+      const dtoModelList = modelList.reduce((preList, item) => {
+        const { model, project } = item;
+
+        // 构造 model 关键数据
+        const { key, name, desc } = model;
+        const dtoModel = { key, name, desc };
+
+        // 构造 project 关键数据
+        const dtoProject = Object.keys(project).reduce((preObj, proKey) => {
+          const { key, name, desc, homePage } = project[proKey];
+          preObj[proKey] = { key, name, desc, homePage };
+
+          return preObj;
+        }, {});
+
+        // 整合返回结构
+        preList.push({ model: dtoModel, project: dtoProject });
+
+        return preList;
+      }, []);
+
+      this.success(ctx, dtoModelList);
     }
   };
 };

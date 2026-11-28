@@ -1,0 +1,25 @@
+module.exports = {
+  name: '抖音课程',
+  desc: '抖音课程系统',
+  homepage: '',
+  menu: [
+    {
+      key: 'traffic',
+      name: '流量管理',
+      menuType: 'sider',
+      siderConfig: {
+        menu: [
+          {
+            key: 'user-traffic',
+            name: '学员流量',
+            menuType: 'module',
+            moduleType: 'custom',
+            customConfig: {
+              path: '/user-traffic',
+            },
+          },
+        ],
+      },
+    },
+  ],
+};
